@@ -68,10 +68,29 @@ int greatestCommonDivisor(vector<int> nums)
             greatestNum = nums[i];
         }
     }
-    //check if all nums are divisible by that number
-    //if not, decrement the number and check again
-    //if the code gets all the wat down to 1, then 1 is the gdc
-    return greatestNum;
+    //check if all nums are divisible by greatesrNum and increment down if not
+
+    //keep counter of how many are divisable, if counter gets to size of vector, then that is gcd
+    int countOfDivisible = 0;
+    //itterate down from greatestNum to 1
+    for(int i = greatestNum; i > 1; i--){
+        //itterate through nums themselves
+        for(int j = 0; j < nums.size(); j++){
+        //check if nums[j] is divisible by i and increment counter if true
+        if(nums[j] % i == 0){
+            countOfDivisible++;
+        }
+        //if counter is equal to size of vector, return i as gcd
+        if(countOfDivisible == nums.size()){
+            return i;
+            break;
+        }
+    }
+    //reset counter for next itteration of i
+    countOfDivisible = 0;
+}
+//if we itterate through all nums and the gdc is not found, it is 1
+    return 1;
 }
 //--
 bool isSorted(vector<int> nums)
