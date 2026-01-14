@@ -59,6 +59,13 @@ int numberGreaterThanAverage(vector<int> nums)
 int greatestCommonDivisor(vector<int> nums)
 {
     // TODO: Student 3
+    //find greatest common divsor of the vector nums
+    //how to find greatest common divisor of multiple nums:
+    //find the greatest number in the data set
+    //check if all nums are divisible by that number
+    //if not, decrement the number and check again
+    //if the code gets all the wat down to 1, then 1 is the gdc
+    
     return 1;
 }
 //--
