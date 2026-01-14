@@ -14,13 +14,13 @@ int main()
     vector<int> numbers = getNumbers();
 
     //process the numbers and print results
-    cout<<"Most frequent number: "<<findMostFrequentNumber(numbers)<<endl;
+/*  cout<<"Most frequent number: "<<findMostFrequentNumber(numbers)<<endl;
     
     cout<<"There are "<<numberGreaterThanAverage(numbers)<<" numbers greater than the average."<<endl;
-    
+*/
     cout<<"The greatest common divisor is: "<<greatestCommonDivisor(numbers)<<endl;
     
-    if(isSorted(numbers))
+  /*  if(isSorted(numbers))
     {
         cout<<"The numbers are sorted."<<endl;
     }
@@ -28,7 +28,7 @@ int main()
     {
         cout<<"The numbers are not sorted."<<endl;
     }
-
+*/
     return 0;
 }
 //--
@@ -62,11 +62,16 @@ int greatestCommonDivisor(vector<int> nums)
     //find greatest common divsor of the vector nums
     //how to find greatest common divisor of multiple nums:
     //find the greatest number in the data set
+    int greatestNum = -1;
+    for(int i = 0; i < nums.size(); i++){
+        if(nums[i] > greatestNum){
+            greatestNum = nums[i];
+        }
+    }
     //check if all nums are divisible by that number
     //if not, decrement the number and check again
     //if the code gets all the wat down to 1, then 1 is the gdc
-    
-    return 1;
+    return greatestNum;
 }
 //--
 bool isSorted(vector<int> nums)
