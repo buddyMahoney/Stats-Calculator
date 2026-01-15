@@ -47,7 +47,38 @@ vector<int> getNumbers()
 int findMostFrequentNumber(vector<int> nums)
 {
     // TODO: Student 1
-    return -1;
+
+    //2d vector of ints
+    vector <vector <int>> table; // help me find a better name please!
+    
+    
+    for(int i = 0; i < nums.size(); i++){ //iterates through nums
+        bool isFound = false;
+        
+        for(int j = 0; j < table.size(); j++){ //iterates though table vector
+            if(table[j][0] == nums[i]){ //if nums[i] is found in the vector
+                table[j].push_back(nums[i]); //add it to the position where it was found
+            }
+        }
+        
+        if(isFound == false){//if nums[i] is not found
+            table.push_back({nums[i]}); // push it back to the tbale vector
+        }
+    }
+    
+    int mostFrequent = nums[0]; //represents the number with the highest frequency and sets the default value to the first # in nums
+    int maxSize = table[0].size(); // initialize the maxSize to the frequency of the first # in the table
+    
+    for(int i = 0; i < table.size(); i++){ //iterates through table vector
+        
+        if(table[i].size() > maxSize){ //if table[i] is more frequent than maxSize
+            maxSize = table[i].size(); // set the maxSize to the ammount of # there are
+            mostFrequent = table[i][0]; // set the most frequent # to table[i]
+        }
+        
+    }
+
+    return mostFrequent;
 }
 //--
 int numberGreaterThanAverage(vector<int> nums)
