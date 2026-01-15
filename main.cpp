@@ -87,5 +87,5 @@ bool isSorted(vector<int> nums)
             retDescending = false;
         }
     }    
-    return retAscending || retAscending; //Returns a return value for both cases
+    return retAscending || retDescending; //Returns a return value for both cases
 }
