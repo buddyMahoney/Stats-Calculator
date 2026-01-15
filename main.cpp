@@ -81,6 +81,11 @@ bool isSorted(vector<int> nums)
         {
             retAscending = false;
         }
+        //Checls to see if the descending order is misordered. If so it changes the return value to false.
+        if(nums[i] < nums[i+1])
+        {
+            retDescending = false;
+        }
     }    
     return false;
 }
