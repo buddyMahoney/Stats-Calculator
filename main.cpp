@@ -68,5 +68,10 @@ bool isSorted(vector<int> nums)
     //Both set true base off assumption that they are already in order.
     bool retAscending = true;
     bool retDescending = true;
+    //If the size is one or less, than the order is in either order
+    if(nums.size() <= 1)
+    {
+        return true;
+    }
     return false;
 }
