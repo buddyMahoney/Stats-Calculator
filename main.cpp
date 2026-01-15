@@ -74,7 +74,7 @@ bool isSorted(vector<int> nums)
         return true;
     }
 
-    for(int i=0; i < nums.size()-1; i++)//if there is more than one number, goes through the vector
+    for(int i=0; i <= nums.size()-1; i++)//if there is more than one number, goes through the vector
     {
         //Checks to see if the ascending order is misordered. If so, it changes the return value to false
         if(nums[i] > nums[i+1])
