@@ -51,25 +51,38 @@ int findMostFrequentNumber(vector<int> nums)
     // TODO: Student 1
     return -1;
 }
+
 //----------------------------------------------------------------
+
+// Take in the vector nums to calculate the average
+int getAverage(vector<int> nums)
+{
+    int avgNum = 0; // avgNums stores the numbers that are added together
+    for (int i = 0; i < nums.size(); i++)
+    {                      // go through the list
+        avgNum += nums[i]; // add the number to avgNum
+    }
+
+    avgNum = avgNum / nums.size(); // Once all the numbers are added together, we divide by the size (how to get the average)
+    return avgNum;                 // return the average
+}
 
 int numberGreaterThanAverage(vector<int> nums)
 {
     // TODO: Student 2
     // Find out how many numbers are greater than the average of all of the numbers
-    int avgNum = 0;
 
-    for (int i = 0; i < nums.size(); i++)
-    {
-        avgNum = nums[i] + avgNum;
-    };
-    return avgNum;
+    int avgNum = getAverage(nums); // we send the list to getAverage, which returns the average back to us
+    int total = 0;                 // this will add how many numbers are greater than the average
 
-    // go through and add all of the numbers together, then divide for the average
-    // set that to AVGNUM
-    // then go through the list again, and compare to AVGNUM.
-    // If greater, return the number
-    // if not, skip over to the next
+    for (int num : nums)
+    { // go through the list again
+        if (num > avgNum)
+        {               // if the number we are on, is greater than the average
+            total += 1; // add 1 to total
+        }
+    }
+    return total; // we return how many numbers were greater than the average
 }
 
 //----------------------------------------------------------------
