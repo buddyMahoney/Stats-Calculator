@@ -59,8 +59,6 @@ int numberGreaterThanAverage(vector<int> nums)
 int greatestCommonDivisor(vector<int> nums)
 {
     // TODO: Student 3
-    //find greatest common divsor of the vector nums
-    //how to find greatest common divisor of multiple nums:
     //find the greatest number in the data set
     int greatestNum = -1;
     for(int i = 0; i < nums.size(); i++){
@@ -68,9 +66,9 @@ int greatestCommonDivisor(vector<int> nums)
             greatestNum = nums[i];
         }
     }
-    //check if all nums are divisible by greatesrNum and increment down if not
+    //check if all nums are divisible by greatestNum and increment down if not
 
-    //keep counter of how many are divisable, if counter gets to size of vector, then that is gcd
+    //keep counter of how many nums in vector are divisable, if counter gets to size of vector, then that is gcd
     int countOfDivisible = 0;
     //itterate down from greatestNum to 1
     for(int i = greatestNum; i > 1; i--){
