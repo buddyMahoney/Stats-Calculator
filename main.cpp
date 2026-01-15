@@ -73,5 +73,10 @@ bool isSorted(vector<int> nums)
     {
         return true;
     }
+
+    for(int i=0; i < nums.size()-1; i++)//if there is more than one number, goes through the vector
+    {
+
+    }    
     return false;
 }
