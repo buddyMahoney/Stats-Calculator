@@ -97,5 +97,27 @@ int greatestCommonDivisor(vector<int> nums)
 bool isSorted(vector<int> nums)
 {
     // TODO: Student 4
-    return false;
+    //Both set true base off assumption that they are already in order.
+    bool retAscending = true;
+    bool retDescending = true;
+    //If the size is <= 2 than the order is in either order
+    if(nums.size() <= 2)
+    {
+        return true;
+    }
+
+    for(int i=0; i <= nums.size()-1; i++)//if there is more than one number, goes through the vector
+    {
+        //Checks to see if the ascending order is misordered. If so, it changes the return value to false
+        if(nums[i] > nums[i+1])
+        {
+            retAscending = false;
+        }
+        //Checls to see if the descending order is misordered. If so it changes the return value to false.
+        if(nums[i] < nums[i+1])
+        {
+            retDescending = false;
+        }
+    }    
+    return retAscending || retDescending; //Returns a return value for both cases
 }
