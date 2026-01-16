@@ -14,13 +14,12 @@ int main()
     vector<int> numbers = getNumbers();
 
     // process the numbers and print results
-    // cout << "Most frequent number: " << findMostFrequentNumber(numbers) << endl;
+    cout << "Most frequent number: " << findMostFrequentNumber(numbers) << endl;
 
     cout << "There are " << numberGreaterThanAverage(numbers) << " numbers greater than the average." << endl;
 
-    // cout << "The greatest common divisor is: " << greatestCommonDivisor(numbers) << endl;
+    cout << "The greatest common divisor is: " << greatestCommonDivisor(numbers) << endl;
 
-    /*
     if (isSorted(numbers))
     {
         cout << "The numbers are sorted." << endl;
@@ -29,7 +28,6 @@ int main()
     {
         cout << "The numbers are not sorted." << endl;
     }
-        */
 
     return 0;
 }
